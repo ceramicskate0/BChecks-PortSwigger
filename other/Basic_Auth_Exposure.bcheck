@@ -1,0 +1,16 @@
+metadata:
+  language: v1-beta
+  name: "Basic Auth exposure"
+  description: "Passive search for Basic Auth data"
+  author: "CeramicSkate0"
+  tags: "passive", "exposure"
+
+given response then
+  if {check.response.status_code} is "200" and {latest.response.body} matches "Basic "
+then
+      report issue:
+        severity: info 
+        confidence: tentative
+        detail: "Found a string 'Basic ' in a response that could contain possible Basic Auth information."
+        remediation: "Review the response for unnecessary exposure of basic auth information from page source."
+  end if
