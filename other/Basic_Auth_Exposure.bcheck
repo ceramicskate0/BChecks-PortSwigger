@@ -2,7 +2,7 @@ metadata:
   language: v1-beta
   name: "Basic Auth exposure"
   description: "Passive search for Basic Auth data"
-  author: "CeramicSkate0"
+  author: "Ceramicskate0"
   tags: "passive", "exposure"
 
 given response then
